@@ -12,6 +12,7 @@ jobs:
       run: npm run lint
 
   testing:
+    needs: linting
     runs-on: ubuntu-latest
     steps:
     - name: Get the code
@@ -22,6 +23,7 @@ jobs:
       run: npm test
 
   building:
+    needs: testing
     runs-on: ubuntu-latest
     steps:
     - name: Get the code
